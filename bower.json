@@ -1,0 +1,27 @@
+{
+  "name": "sequence-listener",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kegi/sequence-listener",
+  "authors": [
+    "Kevin <kevin@kegisiteweb.com>"
+  ],
+  "description": "Keyboard sequence listener (like barcode readers)",
+  "main": "sequenceListener.js",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "sequence",
+    "listener",
+    "barcode"
+  ],
+  "license": "GPL V2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
