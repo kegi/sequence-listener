@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script type="text/javascript" src="sequenceListener.js"></script>
+<script type="text/javascript">
+
+	new SequenceListener({
+		debug: true
+	});
+
+	document.body.addEventListener('keyboardSequence', function (e) {
+
+		alert(e.detail.sequence);
+        })
+
+</script>
+
+Listening for inputs, watch console for debug
+
+</body>
+</html>
