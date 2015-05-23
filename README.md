@@ -72,14 +72,14 @@ new SequenceListener({
 | allowedChars           | [a-zA-Z0-9]       | Regex use to validate chars individually, more information below                                                           |
 | ignoreInputs           | true              | If this is true, the library will not listen when the focus is on a form input                                             |
 
-### config : maxKeyboardDelay
+### maxKeyboardDelay
 
 The default value `75` will work for most of the devices. The speed of the strokes is different for every devices and may vary a little bit, even on the same sequence. If you set this number too low, you might catch an uncompleted sequence or no sequence at all. If you set this number too high, the library might not be able to differenciate the devices and the users.
 
 #### note:
 the time needed by the library to validate and record the input is also included on the `maxKeyboardDelay`. We might fix this eventually to ensure this number has the same meaning on all computers, no matter the performances.
 
-### condif : allowedChars
+### allowedChars
 This regex will be used to validate the chars individually. **You can't add length valiation** in this regex or this will fail. Also, it is important to note that invalid chars will not stop the recording of the input.
 
 The reason why we decided to not stop the recording is because a lot of those devices add a "return" or other chars at the end of the string. We might add more options later to make it more strict.
