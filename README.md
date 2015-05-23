@@ -1,6 +1,6 @@
 # Sequence Listener
 
-Keyboard sequence listener (like barcode readers) in javascript. This lightweight library (**3.2 kB** when compressed) has **no dependencies**.
+Keyboard sequence listener (like barcode readers) written in javascript. This lightweight library (**3.2 kB** when compressed) has **no dependencies**.
 
 ## Installation
 
@@ -17,7 +17,7 @@ var SequenceListener = require('sequence-listener'); //singleton instance
 new SequenceListener();
 ```
 
-Or, if you are oldschool :
+Or, if you are old school :
 ```html
 <script src="sequenceListener.js"></script>
 <script>var SequenceListener = new SequenceListener();</script>
@@ -63,14 +63,21 @@ new SequenceListener({
 });
 ```
 
-| **Configuration name** | **Default value** | **Description**                                                                                                              |
-|--------------------|---------------|--------------------------------------------------------------------------------------------------------------------------|
-| debug              | false         | That will write debug output in the console to help you to calibrate the library                                         |
-| maxKeyboardDelay   | 75            | When the delay between 2 strokes is greater than this number, the sequence is completed                                  |
-| minLength          | 5             | If this is 1, any keystroke will be detected as an input                                                                 |
-| exactLength        | null          | If you use this, this is gonna override the minLength value. You need to set one or other or an exception will be thrown |
-| allowedChars       | [a-zA-Z0-9]   | Regex use to validate chars individually, more information below                                                         |
-| ignoreInputs       | true          | If this is true, the library will not listen when the focus is on a form input                                           |
+| **Configuration name** | **Default value** | **Description**                                                                                                            |
+|------------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------|
+| debug                  | false             | That will write debug output in the console to help you to calibrate the library                                           |
+| maxKeyboardDelay       | 75                | When the delay (in milliseconds) between 2 strokes is greater than this number, the sequence is completed                  |
+| minLength              | 5                 | If this is 1, any keystroke will be detected as an input                                                                   |
+| exactLength            | null              | If you use this, this is gonna override the `minLength` value. You need to set one or other or an exception will be thrown |
+| allowedChars           | [a-zA-Z0-9]       | Regex use to validate chars individually, more information below                                                           |
+| ignoreInputs           | true              | If this is true, the library will not listen when the focus is on a form input                                             |
+
+### maxKeyboardDelay
+
+The default value `75` will work for most of the devices. The speed of the strokes is different for every devices and may vary a little bit, even on the same sequence. If you set this number to low, you might catch an uncompleted sequence or no sequence at all. If you set this number to high, the library might not be able to differenciate the devices and the users.
+
+#### note:
+the time needed by the library to validate and record the input is also included on the `maxKeyboardDelay`. We might fix this eventually to ensure this number has the same meaning on all computers, no matter the performances.
 
 ### allowedChars
 This regex will be used to validate the chars individually. **You can't add length valiation** in this regex or this will fail. Also, it is important to note that invalid chars will not stop the recording of the input.
