@@ -2,6 +2,12 @@
 
 Keyboard sequence listener (like barcode readers) written in javascript. This lightweight library (**3.2 kB** when compressed) has **no dependencies**.
 
+This library will detect the usage of a barcode scanner (or other devices), it won't generate barcode or read the barcode. Here are great javascript libraries to do it :
+
+ - To read barcodes with camera :  https://github.com/serratus/quaggaJS
+ - To create barcodes : https://github.com/lindell/JsBarcode
+
+
 ## Installation
 
 By using bower (http://bower.io/)
