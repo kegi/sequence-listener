@@ -9,18 +9,24 @@
 <script type="text/javascript" src="sequenceListener.js"></script>
 <script type="text/javascript">
 
-	new SequenceListener({
-		debug: true
-	});
+new SequenceListener({
+    debug: true
+});
 
-	document.body.addEventListener('keyboardSequence', function (e) {
+document.body.addEventListener('keyboardSequence', function (e) {
 
-		alert(e.detail.sequence);
-        })
+    alert(e.detail.sequence);
+});
 
 </script>
 
-Listening for inputs, watch console for debug
+Listening for inputs, watch console for debug output<br>
+
+<br>
+Event is disabled on form inputs :
+
+<input type="text">
+
 
 </body>
 </html>
