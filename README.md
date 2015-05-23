@@ -8,6 +8,10 @@ This library will detect the usage of a barcode scanner (or other devices), it w
  - To create barcodes : https://github.com/lindell/JsBarcode
 
 
+## Demo
+
+http://kegi.github.io/sequence-listener/demo.html
+
 ## Installation
 
 By using bower (http://bower.io/)
